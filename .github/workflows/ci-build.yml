@@ -1,4 +1,5 @@
 name: CI Build
+
 on:
   push:
     branches:
@@ -29,6 +30,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'  # This line is optional if you're using Git submodules.
 
       - name: Install dependencies
         run: |
